@@ -8,24 +8,24 @@ config.py的symbols_conf配置，币对的后一个值为每个币下单的量�
 
 可以修改为每个币最低下单量，资金为100U就可以跑，如果资金不够，建议少跑几个币。
 
-## 配置说明(一定要细看)
+## 启动说明
+启动运行的有两种，为启动部分币(Run.py,Main.py和Start.py)和Runner.py为启动全部币(默认也是启动部分,要启动全部币config.json里的select_all_symbols参数值要为true).
 
-主要为config.py和启动运行的三个脚本(Run.py,Main.py和Start.py).
+## 配置说明(一定要细看)
+must_edit_config.json这个文件必须要填。
 
 config.json里的@select_symbols_2，@select_symbols_1，@select_symbols_3，这为三个列表，对应不同的三个启动脚本。
-symbol_metas.json里的trading_size为下单数量，win_arg为止盈参数，
-当价格为持仓价*该参数时止盈，add_arg为下跌补仓参数，当在开仓状态下止盈后价格下跌，下跌到最近一次持仓价*该参数时又开仓。
-sold是主要参数为能量值，决定开仓的能量。
-当你认为这个币开仓参数都是浮亏很多，要扛单一阵才会上涨，那么可以要求策略对这个币增加能量，将这个数值改小(数值越小对能量要求越大)。
+symbol_metas.json里的trading_size为下单数量，win_arg为追踪止盈触发参数，add_arg为下跌补仓参数，当在开仓状态下止盈后价格下跌，下跌到最近一次持仓价*该参数时又开仓。
+loss_arg是止损参数,trace_win为追踪止盈对比值。
 
 
 ## 收益图
 
-![](https://github.com/mn3711698/mrmv/blob/main/win1.png)
+![](https://github.com/mn3711698/mrvl/blob/main/win1.png)
 
-![](https://github.com/mn3711698/mrmv/blob/main/win2.png)
+![](https://github.com/mn3711698/mrvl/blob/main/win2.png)
 
-![](https://github.com/mn3711698/mrmv/blob/main/win3.png)
+![](https://github.com/mn3711698/mrvl/blob/main/win3.png)
 
 # 使用授权说明(2021-11-25，每个币安密钥都可以无偿体验，如果无法使用请加我微信)
 
@@ -33,7 +33,6 @@ sold是主要参数为能量值，决定开仓的能量。
 
 授权将按不同等级进行不同收费。为保证机器人效果除最低级外，其他级别都会限制授权人数，达到了将暂停该级别的授权。
 
-单向持仓:每1倍默认下单量15元/月，最高可以开20倍,除1倍外。
 
 双向持仓:每1倍默认下单量30元/月，最高可以开10倍。
 
@@ -52,16 +51,6 @@ sold是主要参数为能量值，决定开仓的能量。
     
     @flamhaze5946帮助改进代码送一个无限制授权
     
-
-## 以下为策略在tradingview进行的回测
-btcusdt
-![](https://github.com/mn3711698/mrmv/blob/main/btcusdt.png)
-
-yfiusdt
-![](https://github.com/mn3711698/mrmv/blob/main/yfiusdt.png)
-
-zecusdt
-![](https://github.com/mn3711698/mrmv/blob/main/zecusdt.png)
 
 ## 本项目只是提供代码，不对使用者因使用本代码实际产生的盈亏负责。不要跟我说开源，我从来就没有想过要开源，只是开放使用。
 
@@ -108,7 +97,6 @@ zecusdt
 # 更新日志
 
 2021-12-12  初始始上传
-
 
 # 联系
 打开https://small.yjyzj.cn:8443/ 可以扫码加开发者微信
