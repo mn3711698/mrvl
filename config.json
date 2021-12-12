@@ -1,0 +1,64 @@
+{
+  "说明": "带@的key是不带@的说明",
+  "trade": {
+    "meta_version": "v4",
+    "@meta_version": "目前可以选择的版本再metas文件夹下, 填入其文件夹名即可, 如v1, v2, v3",
+    "trade_size_factor": 1,
+    "@trade_size_factor": "多少倍下单量，默认1倍",
+    "tactics_flag": 0,
+    "@tactics_flag": "机器人消息参数，1为钉钉确认策略计算是否正常，2为钉钉确认ws接收数据是否正常，3为打印确认ws接收数据是否正常,4为打印确认策略计算是否正常。",
+    "intervals": [
+      "1m",
+      "3m",
+      "5m",
+      "15m"
+    ],
+    "@intervals": "用于选择要执行策略的对应时间间隔的K线",
+    "only_msg": 0,
+    "@only_msg": "是否仅发送微信消息提醒，0为默认值，下单并发送微信消息,1仅发送微信提醒不下单",
+    "add_pos_flag": 0,
+    "@add_pos_flag": "加仓标识，为1开启，0关闭,加仓是当币在扛单中，再次遇到开仓信号就又开一次仓，这样会降低持仓均价，但爆仓风险更大",
+    "add_pos_amount": 0,
+    "@add_pos_amount": "加仓次数，0不限次数，其他的整数值为最大加仓次数，每个币的次数一样，不单独设置",
+    "strategy": {
+      "select_all_symbols": false,
+      "@select_all_symbols": "true为开启全部交易对，注意本金最好大于600U",
+      "exclude_symbols": [],
+      "@exclude_symbols": "select_all_symbols为true时，这里可以排除不跑的币",
+      "custom_flag": false,
+      "@custom_flag": "custom_flag为自定义交易对,true为开启自定交易对，custom_symbols必须填写",
+      "custom_symbols": [],
+      "@custom_symbols": "custom_flag为true必须要填写的交易对",
+      "select_symbol_groups":
+      {
+        "customized": ["DOGEBUSD"],
+        "@select_symbols_1": ["AAVEUSDT","KSMUSDT","UNIUSDT","EGLDUSDT","BNBUSDT","SOLUSDT","DOTUSDT","BTCUSDT",
+          "YFIUSDT","ETHUSDT","LTCUSDT","BCHUSDT","MKRUSDT","DASHUSDT","ZECUSDT","ZENUSDT","FILUSDT","AVAXUSDT",
+          "LUNAUSDT","YFIIUSDT","COMPUSDT","XMRUSDT","TRBUSDT","NEOUSDT","NEARUSDT","ATOMUSDT","AXSUSDT","ICPUSDT",
+          "WAVESUSDT","LINKUSDT","BALUSDT","HNTUSDT","DYDXUSDT","ALICEUSDT","SNXUSDT","QTUMUSDT","RAYUSDT",
+          "SUSHIUSDT","OMGUSDT","MASKUSDT","UNFIUSDT","SRMUSDT","GTCUSDT","RUNEUSDT","BANDUSDT","XTZUSDT",
+          "THETAUSDT","KAVAUSDT"],
+        "@select_symbols_2": ["ARUSDT","CELOUSDT","RLCUSDT","LITUSDT","C98USDT","MTLUSDT","1INCHUSDT","CRVUSDT",
+          "SXPUSDT","AUDIOUSDT","TOMOUSDT","ADAUSDT","ICXUSDT","BAKEUSDT","BELUSDT","ALGOUSDT","CTKUSDT","KNCUSDT",
+          "ENJUSDT","FTMUSDT","DODOUSDT","MATICUSDT","IOTAUSDT","STORJUSDT","XRPUSDT","RENUSDT","SFPUSDT","ZRXUSDT",
+          "ALPHAUSDT","ATAUSDT","ONTUSDT","OGNUSDT","SANDUSDT","MANAUSDT","GRTUSDT","OCEANUSDT","BATUSDT","CVCUSDT",
+          "FLMUSDT","KEEPUSDT"],
+        "@select_symbols_3": ["LRCUSDT", "HBARUSDT", "CHRUSDT", "SKLUSDT", "NKNUSDT", "XLMUSDT", "BZRXUSDT",
+          "CHZUSDT", "1000XECUSDT", "BLZUSDT", "DOGEUSDT", "TLMUSDT", "ONEUSDT", "XEMUSDT", "CELRUSDT", "VETUSDT",
+          "RVNUSDT", "GALAUSDT", "ZILUSDT", "TRXUSDT", "ANKRUSDT", "IOSTUSDT", "DGBUSDT", "RSRUSDT", "LINAUSDT",
+          "BTSUSDT", "STMXUSDT", "AKROUSDT", "SCUSDT", "1000SHIBUSDT", "DENTUSDT"]
+      }
+    }
+  },
+  "system": {
+    "timezone": "UTC",
+    "print_error": false,
+    "redis_klines_web_fetch_worker": 10,
+    "redis": {
+      "host": "127.0.0.1",
+      "port": 6379,
+      "password": "",
+      "db_index": 0
+    }
+  }
+}
